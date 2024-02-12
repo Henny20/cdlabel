@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=cdlabel
+Exec=cdlabel
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

@@ -1,0 +1,7 @@
+data/org.molenkamp.Label.desktop.in
+data/org.molenkamp.Label.appdata.xml.in
+data/org.molenkamp.Label.gschema.xml
+src/window.ui
+src/main.py
+src/window.py
+

@@ -1,0 +1,51 @@
+{
+    "app-id" : "org.molenkamp.Label",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "3.38",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "cdlabel",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        {
+	    "name": "python3-discid",
+	    "buildsystem": "simple",
+	    "build-commands": [
+		"pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"discid\" --no-build-isolation"
+	    ],
+	    "sources": [
+		{
+		    "type": "file",
+		    "url": "https://files.pythonhosted.org/packages/d5/fa/c8856ae3eb53393445d84589afbd49ded85527563a7c0457f4e967d5b7af/discid-1.2.0.tar.gz",
+		    "sha256": "cd9630bc53f5566df92819641040226e290b2047573f2c74a6e92b8eed9e86b9"
+		}
+	    ]
+	    },
+        {
+            "name" : "cdlabel",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "file:///home/hennie/Projecten/cdlabel"
+                }
+            ]
+        }
+    ]
+}
