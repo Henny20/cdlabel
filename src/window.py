@@ -727,8 +727,8 @@ class CdlabelWindow(Gtk.ApplicationWindow):
         dialog.set_logo_icon_name('org.molenkamp.label')
         dialog.set_program_name('Gtkcdlabel')
         dialog.set_version("1.0")
-        dialog.set_website('https://imeditor.github.io')
-        dialog.set_authors(['Henny van Gameren'])
+        dialog.set_website('https://example.com')
+        dialog.set_authors(['Henny'])
         gtk_version = '{}.{}.{}'.format(Gtk.get_major_version(),
             Gtk.get_minor_version(), Gtk.get_micro_version())
         comment = '{}\n\n'.format(_("Cdlabel creator"))
